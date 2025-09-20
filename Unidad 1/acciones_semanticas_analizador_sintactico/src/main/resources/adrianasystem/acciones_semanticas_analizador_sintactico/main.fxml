@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox spacing="10" xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="adrianasystem.acciones_semanticas_analizador_sintactico.MainController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <Label text="Demostración de Acciones Semánticas" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <Label text="Ingrese código de ejemplo:"/>
+    <TextArea fx:id="codeInput" promptText="Ejemplo:&#10;int x&#10;int y = 5&#10;x = 10&#10;y = x" prefRowCount="8"/>
+
+    <Button text="Analizar" onAction="#analyzeCode"/>
+
+    <Label text="Tabla de Símbolos:" style="-fx-font-weight: bold;"/>
+    <TableView fx:id="symbolTable" prefHeight="200">
+        <columns>
+            <TableColumn text="Nombre" fx:id="colName" prefWidth="100"/>
+            <TableColumn text="Tipo" fx:id="colType" prefWidth="100"/>
+            <TableColumn text="Valor" fx:id="colValue" prefWidth="100"/>
+            <TableColumn text="Ámbito" fx:id="colScope" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <Label text="Errores:" style="-fx-font-weight: bold;"/>
+    <ListView fx:id="errorList" prefHeight="100"/>
+</VBox>

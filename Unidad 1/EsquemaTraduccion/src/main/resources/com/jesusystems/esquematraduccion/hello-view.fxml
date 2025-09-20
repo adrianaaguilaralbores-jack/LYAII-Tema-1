@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.jesusystems.esquematraduccion.TraduccionController">
+
+    <top>
+        <Label text="📘 Esquema de Traducción - Simulador"
+               style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 10;"/>
+    </top>
+
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Ingrese una instrucción (ej: int x = 10;)" />
+            <TextField fx:id="inputCodigo" promptText="Escriba su código aquí"/>
+            <Button fx:id="btnTraducir" text="Traducir" />
+            <TextArea fx:id="outputResultado" prefRowCount="10" prefColumnCount="30" wrapText="true"/>
+        </VBox>
+    </center>
+</BorderPane>

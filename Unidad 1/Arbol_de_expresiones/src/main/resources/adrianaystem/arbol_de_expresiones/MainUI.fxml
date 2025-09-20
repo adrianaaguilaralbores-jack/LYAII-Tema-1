@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import adrianaystem.arbol_de_expresiones.TreeVisualization?>
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adrianaystem.arbol_de_expresiones.TreeController">
+    <top>
+        <VBox spacing="10" style="-fx-padding: 15; -fx-background-color: #f0f0f0;">
+            <Label text="Árboles de Expresión - Demostración Interactiva" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+            <HBox spacing="10">
+                <TextField fx:id="expressionInput" promptText="Ingrese expresión posfija (ej: 3 4 + 5 *)" style="-fx-pref-width: 300;"/>
+                <Button text="Construir Árbol" onAction="#handleBuildTree" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Limpiar" onAction="#handleClear" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+            <Label text="Instrucciones: Ingrese una expresión en notación posfija con espacios entre elementos (ej: '3 4 + 5 *')" style="-fx-text-fill: #666;"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="10" style="-fx-padding: 15;">
+            <Label text="Visualización del Árbol:" style="-fx-font-weight: bold;"/>
+            <TreeVisualization fx:id="treeVisualization" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-width: 1; -fx-min-height: 400;"/>
+        </VBox>
+    </center>
+    <bottom>
+        <VBox spacing="5" style="-fx-padding: 15; -fx-background-color: #e8e8e8;">
+            <Label fx:id="resultText" text="Resultado: " style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+            <Label fx:id="infixText" text="Notación Infija: " style="-fx-font-size: 12;"/>
+            <Label fx:id="prefixText" text="Notación Prefija: " style="-fx-font-size: 12;"/>
+            <Label fx:id="postfixText" text="Notación Posfija: " style="-fx-font-size: 12;"/>
+        </VBox>
+    </bottom>
+</BorderPane>

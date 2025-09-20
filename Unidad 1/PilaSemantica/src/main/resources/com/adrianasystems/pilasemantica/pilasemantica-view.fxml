@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.adrianasystems.pilasemantica.PilaSemanticaController" style="-fx-background-color: #D8BFD8;">
+
+    <Label text="Introduce una expresión" style="-fx-font-size: 16px;"/>
+    <TextField fx:id="inputExpresion" promptText="Ejemplo: 5+3-2"/>
+    <Button fx:id="btnProcesar" text="Procesar" style="-fx-background-color: #FFC5C5;"/>
+    <TextArea fx:id="txtResultado" prefRowCount="15" prefColumnCount="40" editable="false"/>
+
+</VBox>

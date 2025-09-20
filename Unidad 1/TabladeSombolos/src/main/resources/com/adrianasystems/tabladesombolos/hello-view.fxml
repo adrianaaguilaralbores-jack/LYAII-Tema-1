@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.adrianasystems.tabladesombolos.TablaSimbolosController"
+      spacing="15">
+
+    <!-- Padding corregido usando Insets -->
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Título -->
+    <Label text="Tabla de Símbolos y Direcciones" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <!-- Entrada de código y botón -->
+    <HBox spacing="10">
+        <TextField fx:id="inputCodigo" promptText="Escriba su código aquí" HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnTraducir" text="Agregar a la Tabla"
+                style="-fx-font-size: 14px; -fx-background-color: #1a237e; -fx-text-fill: white; -fx-background-radius: 10;"/>
+    </HBox>
+
+    <!-- Área de resultado -->
+    <TextArea fx:id="outputResultado" editable="false" prefHeight="150"
+              style="-fx-font-family: 'Consolas'; -fx-font-size: 14px;"/>
+
+    <!-- Tablas de símbolos y direcciones -->
+    <HBox spacing="20">
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <Label text="Tabla de Símbolos" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <TableView fx:id="tablaSimbolos" prefHeight="200">
+                <columns>
+                    <TableColumn text="Nombre" fx:id="colNombre" prefWidth="100"/>
+                    <TableColumn text="Tipo" fx:id="colTipo" prefWidth="100"/>
+                    <TableColumn text="Valor" fx:id="colValor" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <Label text="Tabla de Direcciones" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <TableView fx:id="tablaDirecciones" prefHeight="200">
+                <columns>
+                    <TableColumn text="Nombre" fx:id="colNombreDir" prefWidth="100"/>
+                    <TableColumn text="Dirección" fx:id="colDireccion" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+
+</VBox>
